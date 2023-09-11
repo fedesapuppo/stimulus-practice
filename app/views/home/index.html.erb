@@ -24,3 +24,12 @@
   </div>
   <p data-toggle-target="highlightable">(This is the Text)</p>
 </div>
+<h1>Character count</h1>
+<div data-controller="text-length" data-text-length-max-length-value="50">
+  <textarea
+    data-text-length-target="input"
+    placeholder="Type here"
+    rows="4"
+  ></textarea>
+  <div data-text-length-target="counter" class="text-muted">50 characters remaining</div>
+</div>

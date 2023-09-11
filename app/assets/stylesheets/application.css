@@ -16,3 +16,7 @@
 .highlighted {
     background-color: yellow;
 }
+
+.text-danger {
+    color: red;
+}
