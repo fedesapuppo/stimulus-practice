@@ -1,12 +1,18 @@
-<h1>Hello cotroller</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>Greet me in the console</h1>
 <div data-controller="hello">
   <input data-hello-target="name" type="text">
-  <button data-action="click->hello#greet">Greet</button>
+  <button data-action="hello#greet">Greet me!</button>
 </div>
 <div data-controller="toggle">
-  <button data-action="click->toggle#toggle">Toggle Element</button>
-  <div data-toggle-target="toggleable" class="hidden">
-    This is the hidden element.
-  </div>
+  <h1>Show/Hide all target elements</h1>
+  <button data-action="toggle#showTargets">Show All Elements</button>
+  <button data-action="toggle#hideTargets">Hide All Elements</button>
+  <button data-action="toggle#toggleTargets">Toggle All Elements Visibility</button>
+  <p data-toggle-target="hideable">This element starts visible</p>
+  <p data-toggle-target="hideable" hidden >This element starts hidden</p>
+</div>
+<div data-controller="toggle">
+  <h1>Swap buttons visibility</h1>
+  <button data-action="toggle#toggleTargets" data-toggle-target="hideable">Button 1</button>
+  <button data-action="toggle#toggleTargets" data-toggle-target="hideable" hidden>Button 2</button>
 </div>

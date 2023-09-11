@@ -1,29 +1,23 @@
-import { Controller } from "@hotwired/stimulus";
+import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["toggleable"];
+  static targets = ["hideable"]
 
-  connect() {
-    this.hideToggleable();
+  showTargets() {
+    this.hideableTargets.forEach(el => {
+      el.hidden = false
+    });
   }
 
-  toggle() {
-    if (this.isToggleableHidden()) {
-      this.showToggleable();
-    } else {
-      this.hideToggleable();
-    }
+  hideTargets() {
+    this.hideableTargets.forEach(el => {
+      el.hidden = true
+    });
   }
 
-  isToggleableHidden() {
-    return this.toggleableTarget.classList.contains("hidden");
-  }
-
-  showToggleable() {
-    this.toggleableTarget.classList.remove("hidden");
-  }
-
-  hideToggleable() {
-    this.toggleableTarget.classList.add("hidden");
+  toggleTargets() {
+    this.hideableTargets.forEach((el) => {
+      el.hidden = !el.hidden
+    });
   }
 }
