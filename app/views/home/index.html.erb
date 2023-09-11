@@ -3,16 +3,24 @@
   <input data-hello-target="name" type="text">
   <button data-action="hello#greet">Greet me!</button>
 </div>
+<h1>Show/Hide all target elements</h1>
 <div data-controller="toggle">
-  <h1>Show/Hide all target elements</h1>
   <button data-action="toggle#showTargets">Show All Elements</button>
   <button data-action="toggle#hideTargets">Hide All Elements</button>
   <button data-action="toggle#toggleTargets">Toggle All Elements Visibility</button>
   <p data-toggle-target="hideable">This element starts visible</p>
   <p data-toggle-target="hideable" hidden >This element starts hidden</p>
 </div>
+<h1>Swap buttons visibility</h1>
 <div data-controller="toggle">
-  <h1>Swap buttons visibility</h1>
   <button data-action="toggle#toggleTargets" data-toggle-target="hideable">Button 1</button>
   <button data-action="toggle#toggleTargets" data-toggle-target="hideable" hidden>Button 2</button>
+</div>
+<h1>Highlight text</h1>
+<div data-controller="toggle" data-toggle-highlighted-class="highlighted">
+  <div>
+    <input type="checkbox" id="object1" data-action="change->toggle#update">
+    <label for="object1">Highlight the Text!</label>
+  </div>
+  <p data-toggle-target="highlightable">(This is the Text)</p>
 </div>

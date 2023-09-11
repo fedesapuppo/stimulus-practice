@@ -1,7 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["hideable"]
+  static targets = ["hideable", "highlightable"]
+  static classes = ["highlighted"]
 
   showTargets() {
     this.hideableTargets.forEach(el => {
@@ -19,5 +20,9 @@ export default class extends Controller {
     this.hideableTargets.forEach((el) => {
       el.hidden = !el.hidden
     });
+  }
+
+  update() {
+    this.highlightableTarget.classList.toggle(this.highlightedClass)
   }
 }
